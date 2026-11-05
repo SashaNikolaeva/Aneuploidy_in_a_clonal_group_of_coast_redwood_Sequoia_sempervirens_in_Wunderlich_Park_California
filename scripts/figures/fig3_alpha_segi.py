@@ -51,10 +51,11 @@ for s in CLONE:
     ax.plot(x, alpha.loc[s].values, color=C_CLONE, lw=1.4, alpha=0.9, zorder=4)
 for s, col in [(WPR, C_WPR), (C1, C_C1)]:
     ax.plot(x, alpha.loc[s].values, color=col, lw=1.6, zorder=5)
-ax.annotate("9 clone ramets", (4, alpha.loc[CLONE, "chr4"].min()), xytext=(4.45, 0.835), fontsize=8.5, color=INK,
-            arrowprops=dict(arrowstyle="-", color=INK2, lw=0.6))
+# labels offset off the chr5 ticks (Sasha, 2026-11-05: "7 copies" and the ramet leader overlapped them)
+ax.annotate("9 clone ramets", (4, alpha.loc[CLONE, "chr4"].min()), xytext=(4.45, 0.818), fontsize=8.5, color=INK,
+            va="center", arrowprops=dict(arrowstyle="-", color=INK2, lw=0.6, shrinkA=2, shrinkB=1))
 ax.text(4.36, a5["chr4"] + 0.003, "5 copies", fontsize=7.5, color=INK2, va="bottom")
-ax.text(4.36, a7["chr4"] + 0.004, "7 copies", fontsize=7.5, color=INK2, va="bottom")
+ax.text(4.36, max(a7["chr4"], a7["chr5"]) + 0.004, "7 copies", fontsize=7.5, color=INK2, va="bottom")
 ax.set_xticks(x)
 ax.set_xticklabels([str(i) for i in x])
 ax.set_xlim(0.5, 11.5)
