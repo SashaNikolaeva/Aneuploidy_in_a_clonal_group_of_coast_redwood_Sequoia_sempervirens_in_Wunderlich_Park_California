@@ -71,6 +71,7 @@ Chromosome copy number is reported as alpha_ij, the share of a sample's reads on
 | `scripts/figures/fig1_site.py` | Figure 1 (range map, site map, historical and present imagery, site photos). |
 | `scripts/figures/fig2_clonality.py` | Figure 2 (distance heatmap and pairwise distance classes) and the all-pairs comparison with the survey (Results: 24,976 pairs of distinct trees). |
 | `scripts/figures/fig3_alpha_segi.py` | Figure 3 (alpha per chromosome for the stems, WPR, C1 and the survey trees), plotted from the saved output of scripts/finalize/09_R0_fig6_table1.py. |
+| `scripts/figures/alpha_summary.py` | Prints the alpha numbers of the Abstract, Results (chromosome-4 and other-chromosome alpha of the stems, survey minimum, WPR and C1) and Supplementary Table S1 from the saved output of scripts/finalize/09_R0_fig6_table1.py. |
 
 ### Stem spacing
 
