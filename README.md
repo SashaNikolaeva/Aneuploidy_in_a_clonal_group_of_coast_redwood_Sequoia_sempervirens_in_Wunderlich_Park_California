@@ -5,7 +5,7 @@ Nine stems of a clonal group in Wunderlich Park are one genet, and every stem ca
 ## What is here
 
 - `scripts/`: every script behind a result in the paper, in the folder layout of the analysis (several scripts import each other by path). Each script starts with a header giving its role in the paper; the code below the header is unchanged from the run that produced the results.
-- `prereg/`: the tables of tests, thresholds and conclusion wording that were frozen before the analyses were run (Data and code availability), with their SHA-256 checksums: `finalize_PREREG.tsv` (main run), `dosage_clonality_PREREG_v2.tsv` (allele-dosage and batch-aware clonality tests), `flow/` (flow-cytometry runs).
+- `prereg/`: the tables of tests, thresholds and conclusion wording that were frozen before the analyses were run (Data and code availability), with their SHA-256 checksums: `finalize_PREREG.tsv` (main run) and `dosage_clonality_PREREG_v2.tsv` (allele-dosage and batch-aware clonality tests).
 
 ## How the scripts fit together
 
@@ -83,16 +83,9 @@ Chromosome copy number is reported as alpha_ij, the share of a sample's reads on
 
 | Script | What it does |
 |---|---|
-| `scripts/flow/fcsio.py` | Minimal FCS file reader used by the flow-cytometry pipeline. |
-| `scripts/flow/flowpipe.py` | Flow-cytometry genome-size pipeline with quality grades set in advance. Its grades (all three tubes failing) are no longer reported in the paper; kept as a record of the flow analysis. |
-| `scripts/flow/freeze_prereg.py` | Freezes the parameters of a flow-cytometry run before the pipeline is run on it. |
-| `scripts/flow/make_sample_sheet.py` | Builds the sample sheet of a flow-cytometry run from its FCS files. |
-| `scripts/flow/run_flow.py` | Runs the flow-cytometry pipeline on one run folder. |
-| `scripts/flow/validate_fcsio.py` | One-off check of fcsio.py against the fcsparser package. |
-| `scripts/flow/run_flow_2026-10.sh` | Driver of the two flow-cytometry runs analysed with the pipeline. |
-| `scripts/flow/final_figure/make_clone_vs_reference_figure.py` | Flow-cytometry figure (Figure 4): DNA-content histograms of the clone stem and one reference tree (two tubes, NR1 and NR2), each normalized to its own giant sequoia standard peak. The ratios and genome sizes in its legend are typed in from a table made by a script that is not on the server (see README). |
-| `scripts/flow/final_figure/relax_gate_sparse.py` | Check of how the singlet gate changes the peak positions (strict versus relaxed gate; Discussion: the clone-reference difference is no larger than the variation between analyses of the same tubes). |
-| `scripts/flow/final_figure/genome_sizes.py` | Strict-gate genome sizes of the same tubes (gate comparison behind the Discussion sentence on variation between analyses). Not the script behind the plotted values. |
+| `scripts/flow/make_clone_vs_reference_figure.py` | Flow-cytometry figure (Figure 4): DNA-content histograms of the clone stem and one reference tree (two tubes, NR1 and NR2), each normalized to its own giant sequoia standard peak. The ratios and genome sizes in its legend are typed in from a table made by a script that is not on the server (see README). |
+| `scripts/flow/relax_gate_sparse.py` | Check of how the singlet gate changes the peak positions (strict versus relaxed gate; Discussion: the clone-reference difference is no larger than the variation between analyses of the same tubes). |
+| `scripts/flow/genome_sizes.py` | Strict-gate genome sizes of the same tubes (gate comparison behind the Discussion sentence on variation between analyses). Not the script behind the plotted values. |
 
 ### Supplementary Note S1 (why no somatic mutation rate)
 
@@ -108,7 +101,7 @@ Chromosome copy number is reported as alpha_ij, the share of a sample's reads on
 | `scripts/mutation_rate_note/align_to_neale.sh` | Aligns the 13 libraries to the coast redwood assembly for the run above. |
 | `scripts/mutation_rate_note/shared_somatic_variants.py` | Alleles carried by all nine stems at low fraction and rare in other trees, candidate mutations of the founding tree (Supplementary Note S1: 14 candidates, 13 inherited). |
 
-`scripts/upstream/SOURCES.tsv` and `scripts/flow/final_figure/SOURCES.tsv` give the original location, checksum (before the header was added) and date of each copied upstream script.
+`scripts/upstream/SOURCES.tsv` and `scripts/flow/SOURCES.tsv` give the original location, checksum (before the header was added) and date of each copied upstream script.
 
 ## Code not included
 
@@ -125,4 +118,4 @@ Chromosome copy number is reported as alpha_ij, the share of a sample's reads on
 
 ## Software
 
-Python 3 with numpy, pandas, scipy and matplotlib (fcsparser for `validate_fcsio.py` and the scripts in `scripts/flow/final_figure/`); BWA-MEM, samtools 1.19.2, bcftools, minimap2 and Freebayes 1.3.6.
+Python 3 with numpy, pandas, scipy and matplotlib (fcsparser for the scripts in `scripts/flow/`); BWA-MEM, samtools 1.19.2, bcftools, minimap2 and Freebayes 1.3.6.
