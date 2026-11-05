@@ -1,0 +1,4 @@
+file	source	md5	source_mtime	role_in_paper
+make_clone_vs_reference_figure.py	/space/s1/sashanikolaeva/Scripts/GitHub/clone_paper_figures/flow/final_figure/make_clone_vs_reference_figure.py	006f7bb33c7de0c56e19770f58cd1f57	2026-10-29	Fig S2; legend values hard-coded (lines 27-29); DIR points at Sasha's Mac (FCS files are on the server in flow_cytometry_data_clone/Experiment_002)
+relax_gate_sparse.py	/space/s1/sashanikolaeva/Scripts/GitHub/clone_paper_figures/flow/final_figure/relax_gate_sparse.py	257273e95eb951d628611eb89ef9fb56	2026-10-29	gate-sensitivity check (strict vs relaxed singlet band); Mac DIR
+genome_sizes.py	/space/s1/sashanikolaeva/flow_cytometry_data_clone/genome_sizes.py	551cecc73655dd435d5db4037a906f73	2026-10-26	strict-gate genome sizes (genome_sizes.csv: C2 2.992, NR1 3.12, NR2_1 unresolved); NOT the script behind the paper values, which come from all_tubes_genome_sizes.csv (script not on the server)

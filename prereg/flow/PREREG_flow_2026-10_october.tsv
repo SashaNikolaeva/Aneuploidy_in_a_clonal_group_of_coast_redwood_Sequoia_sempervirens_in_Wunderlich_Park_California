@@ -1,0 +1,46 @@
+section	key	value
+run	run	2026-10_october
+run	purpose	R6-oct: descriptive only (methods development); tree labels UNKNOWN, no contrast (S5)
+param	dna_channels	BUV 496-A,Pacific Blue-A,BV421-A
+param	debris_frac	0.5
+param	singlet_mad	4.0
+param	gain_exp	7.65
+param	std_win_lo	0.7
+param	std_win_hi	1.3
+param	std_below_lo	0.45
+param	red_win_lo	2.6
+param	red_win_hi	3.4
+param	g2_win	0.06
+param	fit_w1	0.15
+param	fit_w2	0.25
+param	fit_sensitive_pct	1.0
+param	A_red_n	1000
+param	A_std_n	500
+param	A_cv	5.0
+param	A_g2g1_lo	1.95
+param	A_g2g1_hi	2.05
+param	A_suppr	0.85
+param	A_ceiling_pct	1.0
+param	B_n	100
+param	B_cv	8.0
+param	std_2C_pg_assembly	16.62
+param	std_2C_pg_literature	NA
+param	boot_reps	2000
+param	seed	20261026
+param	out_consistent_lo	-2.3
+param	out_consistent_hi	-0.8
+param	out_null_halfwidth	0.8
+param	out_inconsistent_below	-3.0
+param	expected_delta_pct	-1.54
+outcome	unit	independent chop (tubes of one chop averaged); tree = cluster; contrast within run x voltage stratum
+outcome	statistic	delta % = (clone chop mean - mean of euploid tree means) / mean of euploid tree means; 95% CI by two-level bootstrap (trees, then chops); PASS-B and above only
+outcome	consistent	CI excludes 0 and point in [-2.3, -0.8]% -> 'consistent with one-copy loss' (not chr4-specific)
+outcome	does_not_support	CI includes 0 with half-width <= 0.8%
+outcome	inconsistent	delta < -3.0% with CI excluding -1.54% -> artefact or larger loss; re-examine
+outcome	inconclusive	anything else
+outcome	does_not_license	which chromosome; a copy number
+power	k_euploid_trees=6	required delta/sigma_T 3.14; max sigma_T for delta 1.54% = 0.49%
+power	k_euploid_trees=8	required delta/sigma_T 2.93; max sigma_T for delta 1.54% = 0.52%
+power	k_euploid_trees=10	required delta/sigma_T 2.83; max sigma_T for delta 1.54% = 0.54%
+power	k_euploid_trees=inf	required delta/sigma_T 2.49; max sigma_T for delta 1.54% = 0.62%
+frozen	at	2026-10-26T13:34:46
