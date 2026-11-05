@@ -1,8 +1,6 @@
 # Aneuploidy in a clonal group of coast redwood (*Sequoia sempervirens*) in Wunderlich Park, California
 
-Analysis scripts for the paper of the same name (Nikolaeva, Santangelo, Smith, Moore, Stern, Dodd and Nielsen; in preparation).
-
-Nine stems of a clonal group in Wunderlich Park are one genet, and every stem carries five of the six copies of chromosome 4. These scripts produced the numbers, tables and figures of the paper from exome-capture reads of the stems and of 224 coast redwood trees from across the range.
+Nine stems of a clonal group in Wunderlich Park are one genet, and every stem carries five of the six copies of chromosome 4. 
 
 ## What is here
 
