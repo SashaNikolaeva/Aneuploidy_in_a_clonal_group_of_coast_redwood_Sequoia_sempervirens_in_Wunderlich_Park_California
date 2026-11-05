@@ -2,8 +2,8 @@
 # Paper: Aneuploidy in a clonal group of coast redwood (Sequoia sempervirens) in Wunderlich Park, California.
 # Role in the paper: Computes alpha_ij (read share of a sample on a chromosome divided by the median share of
 # the 224 survey trees) and the expected one-copy levels, saved as fig6_source.tsv and fig6_expected_levels.tsv
-# (Methods and Results: Chromosome copy number; Supplementary Table S1). Also writes the stem locations and PCR
-# pools of Table 1. Its figure was replaced by scripts/figures/fig3_alpha_segi.py.
+# (Methods and Results: Chromosome copy number; Supplementary Table S1). Also writes the stem coordinates of
+# Table 1. Its figure was replaced by scripts/figures/fig3_alpha_segi.py.
 # Annotation added 2026-11-05 for this repository; the code below is unchanged from the analysis run.
 # Absolute paths refer to the analysis server; see README.md.
 # ----------------------------------------------------------------------------------------------------
