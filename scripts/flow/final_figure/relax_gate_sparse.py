@@ -1,7 +1,8 @@
 # ----------------------------------------------------------------------------------------------------
 # Paper: Aneuploidy in a clonal group of coast redwood (Sequoia sempervirens) in Wunderlich Park, California.
 # Role in the paper: Check of how the singlet gate changes the peak positions (strict versus relaxed gate;
-# Results: the clone peak lies between 2.99x and 3.13x depending on how the peaks were found).
+# Discussion: the clone-reference difference is no larger than the variation between analyses of the same
+# tubes).
 # Annotation added 2026-11-05 for this repository; the code below is unchanged from the analysis run.
 # Absolute paths refer to the analysis server; see README.md.
 # ----------------------------------------------------------------------------------------------------

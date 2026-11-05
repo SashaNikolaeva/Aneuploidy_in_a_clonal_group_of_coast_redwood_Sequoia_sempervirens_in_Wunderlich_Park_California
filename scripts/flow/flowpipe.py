@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # Paper: Aneuploidy in a clonal group of coast redwood (Sequoia sempervirens) in Wunderlich Park, California.
-# Role in the paper: Flow-cytometry genome-size pipeline with quality grades set in advance (Methods: Flow
-# cytometry; it grades all three tubes as failing).
+# Role in the paper: Flow-cytometry genome-size pipeline with quality grades set in advance. Its grades (all
+# three tubes failing) are no longer reported in the paper; kept as a record of the flow analysis.
 # Annotation added 2026-11-05 for this repository; the code below is unchanged from the analysis run.
 # Absolute paths refer to the analysis server; see README.md.
 # ----------------------------------------------------------------------------------------------------

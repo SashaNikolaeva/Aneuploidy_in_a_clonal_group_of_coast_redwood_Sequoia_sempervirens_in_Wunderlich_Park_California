@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # Paper: Aneuploidy in a clonal group of coast redwood (Sequoia sempervirens) in Wunderlich Park, California.
-# Role in the paper: Strict-gate genome sizes of the same tubes (gate comparison in the flow figure legend). Not
-# the script behind the plotted values.
+# Role in the paper: Strict-gate genome sizes of the same tubes (gate comparison behind the Discussion sentence
+# on variation between analyses). Not the script behind the plotted values.
 # Annotation added 2026-11-05 for this repository; the code below is unchanged from the analysis run.
 # Absolute paths refer to the analysis server; see README.md.
 # ----------------------------------------------------------------------------------------------------

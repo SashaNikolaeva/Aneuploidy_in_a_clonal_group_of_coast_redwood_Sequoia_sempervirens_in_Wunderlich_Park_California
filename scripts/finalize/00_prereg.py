@@ -2,7 +2,8 @@
 # ----------------------------------------------------------------------------------------------------
 # Paper: Aneuploidy in a clonal group of coast redwood (Sequoia sempervirens) in Wunderlich Park, California.
 # Role in the paper: Freezes the written plan of the analysis run (prereg/finalize_PREREG.tsv) before any data
-# are opened (Methods: the tests and thresholds were written down before the clone statistics were computed).
+# are opened (Data and code availability: the tables of tests and thresholds fixed before the analyses were
+# run).
 # Annotation added 2026-11-05 for this repository; the code below is unchanged from the analysis run.
 # Absolute paths refer to the analysis server; see README.md.
 # ----------------------------------------------------------------------------------------------------

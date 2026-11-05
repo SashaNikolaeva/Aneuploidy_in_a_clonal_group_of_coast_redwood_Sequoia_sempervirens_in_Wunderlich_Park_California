@@ -5,7 +5,7 @@ Nine stems of a clonal group in Wunderlich Park are one genet, and every stem ca
 ## What is here
 
 - `scripts/`: every script behind a result in the paper, in the folder layout of the analysis (several scripts import each other by path). Each script starts with a header giving its role in the paper; the code below the header is unchanged from the run that produced the results.
-- `prereg/`: the tables of tests, thresholds and conclusion wording that were frozen before the analyses were run (Methods), with their SHA-256 checksums: `finalize_PREREG.tsv` (main run), `dosage_clonality_PREREG_v2.tsv` (allele-dosage and batch-aware clonality tests), `flow/` (flow-cytometry runs).
+- `prereg/`: the tables of tests, thresholds and conclusion wording that were frozen before the analyses were run (Data and code availability), with their SHA-256 checksums: `finalize_PREREG.tsv` (main run), `dosage_clonality_PREREG_v2.tsv` (allele-dosage and batch-aware clonality tests), `flow/` (flow-cytometry runs).
 
 ## How the scripts fit together
 
@@ -37,7 +37,7 @@ Chromosome copy number is reported as alpha_ij, the share of a sample's reads on
 | Script | What it does |
 |---|---|
 | `scripts/finalize/common.py` | Shared definitions of the analysis run: input paths, sample sets (the 224 survey trees, the nine stems, WPR, C1), the read-count statistic and helpers. Imported by every script in scripts/finalize/ and scripts/dosage_clonality/. |
-| `scripts/finalize/00_prereg.py` | Freezes the written plan of the analysis run (prereg/finalize_PREREG.tsv) before any data are opened (Methods: the tests and thresholds were written down before the clone statistics were computed). |
+| `scripts/finalize/00_prereg.py` | Freezes the written plan of the analysis run (prereg/finalize_PREREG.tsv) before any data are opened (Data and code availability: the tables of tests and thresholds fixed before the analyses were run). |
 | `scripts/finalize/01_inputs_R0g.py` | Records input checksums and the fixed sample sets, and checks that the inputs reproduce the earlier chromosome-4 value before the run continues. |
 | `scripts/finalize/02_R1ab.py` | Chromosome-4 copy-number statistic per stem with prediction-interval t, bootstrap CI and the bound on the fraction of chromosome 4 lost. Part of the frozen run; these numbers are NOT reported in the current version of the paper, which reports alpha_ij (scripts/finalize/09_R0_fig6_table1.py). |
 | `scripts/finalize/03_vcf_pass.sh` | One pass over the survey VCF: per-SNP read depth and reference/alternative read counts at SNPs placed on giant sequoia chromosomes. Input of the allele-balance, allele-dosage and allele-presence analyses. |
@@ -84,15 +84,15 @@ Chromosome copy number is reported as alpha_ij, the share of a sample's reads on
 | Script | What it does |
 |---|---|
 | `scripts/flow/fcsio.py` | Minimal FCS file reader used by the flow-cytometry pipeline. |
-| `scripts/flow/flowpipe.py` | Flow-cytometry genome-size pipeline with quality grades set in advance (Methods: Flow cytometry; it grades all three tubes as failing). |
+| `scripts/flow/flowpipe.py` | Flow-cytometry genome-size pipeline with quality grades set in advance. Its grades (all three tubes failing) are no longer reported in the paper; kept as a record of the flow analysis. |
 | `scripts/flow/freeze_prereg.py` | Freezes the parameters of a flow-cytometry run before the pipeline is run on it. |
 | `scripts/flow/make_sample_sheet.py` | Builds the sample sheet of a flow-cytometry run from its FCS files. |
 | `scripts/flow/run_flow.py` | Runs the flow-cytometry pipeline on one run folder. |
 | `scripts/flow/validate_fcsio.py` | One-off check of fcsio.py against the fcsparser package. |
 | `scripts/flow/run_flow_2026-10.sh` | Driver of the two flow-cytometry runs analysed with the pipeline. |
-| `scripts/flow/final_figure/make_clone_vs_reference_figure.py` | Flow-cytometry figure: DNA-content histograms of the clone stem and two reference trees, each normalized to its own giant sequoia standard peak. The ratios and genome sizes in its legend are typed in from a table made by a script that is not on the server (see README). |
-| `scripts/flow/final_figure/relax_gate_sparse.py` | Check of how the singlet gate changes the peak positions (strict versus relaxed gate; Results: the clone peak lies between 2.99x and 3.13x depending on how the peaks were found). |
-| `scripts/flow/final_figure/genome_sizes.py` | Strict-gate genome sizes of the same tubes (gate comparison in the flow figure legend). Not the script behind the plotted values. |
+| `scripts/flow/final_figure/make_clone_vs_reference_figure.py` | Flow-cytometry figure (Figure 4): DNA-content histograms of the clone stem and one reference tree (two tubes, NR1 and NR2), each normalized to its own giant sequoia standard peak. The ratios and genome sizes in its legend are typed in from a table made by a script that is not on the server (see README). |
+| `scripts/flow/final_figure/relax_gate_sparse.py` | Check of how the singlet gate changes the peak positions (strict versus relaxed gate; Discussion: the clone-reference difference is no larger than the variation between analyses of the same tubes). |
+| `scripts/flow/final_figure/genome_sizes.py` | Strict-gate genome sizes of the same tubes (gate comparison behind the Discussion sentence on variation between analyses). Not the script behind the plotted values. |
 
 ### Supplementary Note S1 (why no somatic mutation rate)
 

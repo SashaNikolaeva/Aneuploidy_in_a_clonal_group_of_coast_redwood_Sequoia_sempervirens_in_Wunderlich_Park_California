@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # ----------------------------------------------------------------------------------------------------
 # Paper: Aneuploidy in a clonal group of coast redwood (Sequoia sempervirens) in Wunderlich Park, California.
-# Role in the paper: Flow-cytometry figure: DNA-content histograms of the clone stem and two reference trees,
-# each normalized to its own giant sequoia standard peak. The ratios and genome sizes in its legend are typed in
-# from a table made by a script that is not on the server (see README).
+# Role in the paper: Flow-cytometry figure (Figure 4): DNA-content histograms of the clone stem and one
+# reference tree (two tubes, NR1 and NR2), each normalized to its own giant sequoia standard peak. The ratios
+# and genome sizes in its legend are typed in from a table made by a script that is not on the server (see
+# README).
 # Annotation added 2026-11-05 for this repository; the code below is unchanged from the analysis run.
 # Absolute paths refer to the analysis server; see README.md.
 # ----------------------------------------------------------------------------------------------------
