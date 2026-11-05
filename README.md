@@ -7,7 +7,7 @@ Nine stems of a clonal group in Wunderlich Park are one genet, and every stem ca
 - `scripts/`: every script behind a result in the paper, in the folder layout of the analysis (several scripts import each other by path). Each script starts with a header giving its role in the paper; the code below the header is unchanged from the run that produced the results.
 - `prereg/`: the tables of tests, thresholds and conclusion wording that were frozen before the analyses were run (Data and code availability), with their SHA-256 checksums: `finalize_PREREG.tsv` (main run) and `dosage_clonality_PREREG_v2.tsv` (allele-dosage and batch-aware clonality tests).
 
-## How the scripts fit together
+## Script logic
 
 1. Reads were aligned to the giant sequoia genome v2.0 (`scripts/upstream/alignment_rule4.py`) and counted per chromosome (`scripts/upstream/idxstats_no_chlor_filtered_august.py`).
 2. Survey SNPs (from the variant calls of the population-structure analysis) were placed on giant sequoia chromosomes (`scripts/upstream/extract_and_align_snps_to_segi.py`), and identity-by-descent distance matrices were computed (`scripts/upstream/IBD_matrix_args.py`).
